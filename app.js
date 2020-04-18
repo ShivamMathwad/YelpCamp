@@ -15,12 +15,14 @@ var commentRoutes    = require("./routes/commentRoutes.js");
 var campgroundRoutes = require("./routes/campgroundRoutes.js");
 var indexRoutes      = require("./routes/indexRoutes");
 
-//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});  //Local mongoDB
-mongoose.connect("mongodb+srv://shivammad:shivam25@cluster0-ywjfs.mongodb.net/test?retryWrites=true&w=majority",{    //mongoDB Atlas 
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-}); 
+var url;
+if(process.env.DATABASEURL){
+    //process.env.DATABASEURL is set on heroku
+    url = process.env.DATABASEURL;
+} else{
+    url = "mongodb://localhost:27017/yelp_camp";
+}
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}); 
 
 app.use(bodyParser.urlencoded({extended:true}) );
 app.use(express.static(__dirname + "/public"));
