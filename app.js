@@ -15,8 +15,8 @@ var commentRoutes    = require("./routes/commentRoutes.js");
 var campgroundRoutes = require("./routes/campgroundRoutes.js");
 var indexRoutes      = require("./routes/indexRoutes");
 
-//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-mongoose.connect("mongodb+srv://shivammad:shivam25@cluster0-ywjfs.mongodb.net/test?retryWrites=true&w=majority",{
+//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});  //Local mongoDB
+mongoose.connect("mongodb+srv://shivammad:shivam25@cluster0-ywjfs.mongodb.net/test?retryWrites=true&w=majority",{    //mongoDB Atlas 
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
