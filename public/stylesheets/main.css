@@ -1,0 +1,19 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+#img_in_show {
+    height: 469px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+#campgrounds_index_thumbnail {
+    height: 190px;
+}
